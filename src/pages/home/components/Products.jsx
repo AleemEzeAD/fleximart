@@ -126,6 +126,7 @@ const Products = () => {
                     breakpoints={{
                         0: { slidesPerView: 1 },
                         350: { slidesPerView: 2 },
+                        767: { slidesPerView: 3 },
                         992: { slidesPerView: 4 },
                     }}
                 >

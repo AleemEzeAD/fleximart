@@ -198,10 +198,29 @@ button {
 .hover2 {
     display: inline-block;
     background: #DB4444;
-    color: #ffffff;
+    color: #fff;
     padding: 12px 20px !important;
-    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor: pointer;
 }
+
+.hover2:hover {
+    transform: rotateX(10deg) rotateY(10deg) translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    background: #FF5C5C;
+}
+
+.hover2:active {
+    transform: rotateX(0deg) rotateY(0deg) translateY(2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
 
 .nav-link {
     color: #000000;
@@ -655,6 +674,10 @@ header .mobile-sidebar .sidebar-icon-link:hover {
     background-color: #F5F5F5;
 }
 
+.products .row {
+    row-gap: 20px;
+}
+
 .products .product-card {
     background: #fff;
     border: 1px solid #eee;
@@ -863,7 +886,25 @@ header .mobile-sidebar .sidebar-icon-link:hover {
 }
 
 .products .slider-nav button:hover {
-    background: #ff0000;
+    background: #DB4444;
+}
+
+.products .color-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.products .dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.products .dot.active {
+    outline: 2px solid #000;
+    outline-offset: 2px;
 }
 
 @media screen and (max-width:1199px) {
@@ -1102,3 +1143,196 @@ header .mobile-sidebar .sidebar-icon-link:hover {
 }
 
 /* ========== Categories styles End ========== */
+/* ========== Experience styles Start ========== */
+.experience {
+    position: relative;
+    padding: 100px 0;
+    background: #272343;
+}
+
+.experience .content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.experience .mini_text {
+    color: #00FF66;
+    font-weight: 800;
+}
+
+.experience .pares {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.experience .numbs {
+    font-weight: 800;
+}
+
+.experience .text {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.experience .box_text {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.experience .box_text {
+    color: #000000;
+}
+
+.experience h2 {
+    color: #ffffff;
+}
+
+.experience .img_wraper {
+    aspect-ratio: 563 / 324;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+}
+
+.experience .img_wraper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    animation: pulseImg 1s ease-in-out infinite;
+}
+
+.experience .audio-waves {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, 50%);
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+    z-index: 2;
+}
+
+.experience .audio-waves span {
+    display: block;
+    width: 6px;
+    height: 10px;
+    background: #ffffff;
+    border-radius: 3px;
+    animation: wave 1s ease-in-out infinite;
+}
+
+.experience .audio-waves span:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.experience .audio-waves span:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.experience .audio-waves span:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.experience .audio-waves span:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+.experience .audio-waves span:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+@keyframes wave {
+
+    0%,
+    100% {
+        height: 10px;
+        transform: scaleY(1);
+        opacity: 0.6;
+    }
+
+    50% {
+        height: 40px;
+        transform: scaleY(2.5);
+        opacity: 1;
+    }
+}
+
+@keyframes pulseImg {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+}
+
+@media screen and (max-width:991px) {
+    .experience {
+        padding: 70px 0;
+    }
+
+    .experience .row {
+        row-gap: 30px;
+    }
+
+    .experience .content {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .experience .box_text {
+        width: 50px;
+        height: 50px;
+    }
+
+    .experience .numbs {
+        font-size: 14px;
+        line-height: 14px;
+    }
+
+    .experience .text {
+        font-size: 8px;
+        font-weight: 800;
+    }
+
+    .experience figure {
+        width: 100%;
+        max-width: 400px;
+        margin: auto;
+    }
+
+    .experience .audio-waves {
+        top: 40%;
+    }
+
+    .experience .img_wraper {
+        aspect-ratio: unset;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .experience {
+        padding: 50px 0;
+    }
+
+    .experience figure {
+        max-width: 300px;
+    }
+}
+
+/* ========== Experience styles End ========== */

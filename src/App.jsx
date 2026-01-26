@@ -33,3 +33,10 @@ export default App;
 // }
 
 // export default App;
+
+
+// git checkout main
+// git add .
+// git commit -am
+// git push origin main
+// npm run deploy 
