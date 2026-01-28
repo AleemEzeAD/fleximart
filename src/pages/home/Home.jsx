@@ -5,6 +5,8 @@ import Categories from "./components/Categories";
 import BestProd from "./components/BestProducts";
 import Experience from "./components/Experience";
 import OurProducts from "./components/OurProducts";
+import Featured from "./components/Featured";
+import Features from "./components/Features";
 export default function Home() {
     return (
         <>
@@ -14,6 +16,8 @@ export default function Home() {
             <BestProd />
             <Experience />
             <OurProducts />
+            <Featured />
+            <Features />
         </>
     );
 }

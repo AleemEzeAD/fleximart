@@ -42,7 +42,7 @@ const Experience = () => {
                 <Row>
                     <Col md={6}>
                         <div className="content">
-                            <span className="mini_text">Categories</span>
+                            <span className="mini_text">Experience</span>
                             <h2>Enhance Your Music Experience</h2>
                             <div className="pares">
                                 <div className="box_text">

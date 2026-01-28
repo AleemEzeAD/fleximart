@@ -3,6 +3,8 @@ import { Routes, Route } from "react-router-dom";
 
 import Header from "./components/Header";
 import Home from "./pages/home/Home";
+import Footer from "./components/Footer";
+import BackToTop from "./components/Back-To-Top";
 
 
 function App() {
@@ -16,23 +18,13 @@ function App() {
                 <Route path="/contact" element={<Contact />} /> */}
             </Routes>
 
-            {/* <Footer /> */}
+            <Footer />
+            <BackToTop />
         </>
     );
 }
 
 export default App;
-
-// function App() {
-//     return (
-//         <div>
-//             <h1>FlexiMart React App</h1>
-//             <p>Your project is clean and ready for development.</p>
-//         </div>
-//     );
-// }
-
-// export default App;
 
 
 // git checkout main
