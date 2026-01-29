@@ -10,7 +10,7 @@ const Features = () => {
     <section className="features pt-0">
       <Container>
         <Row>
-          <Col md={4}>
+          <Col md={4} sm={6}>
             <div className="feature_box">
               <div className="feature_icon">
                 <FaTruck />
@@ -20,7 +20,7 @@ const Features = () => {
             </div>
           </Col>
 
-          <Col md={4}>
+          <Col md={4} sm={6}>
             <div className="feature_box">
               <div className="feature_icon">
                 <FaHeadphonesAlt />
@@ -30,7 +30,7 @@ const Features = () => {
             </div>
           </Col>
 
-          <Col md={4}>
+          <Col md={4} sm={6}>
             <div className="feature_box">
               <div className="feature_icon">
                 <FaShieldAlt />

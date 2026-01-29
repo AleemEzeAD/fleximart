@@ -12,7 +12,7 @@ const Featured = () => {
                     <h3>New Arrival</h3>
                 </div>
                 <Row>
-                    <Col md={6}>
+                    <Col md={6} sm={6}>
                         <div className="content">
                             <figure>
                                 <img src={playstation} width={570} height={600} loading="lazy" alt="new arrival" />
@@ -24,7 +24,7 @@ const Featured = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col md={6}>
+                    <Col md={6} sm={6}>
                         <div className="content">
                             <figure>
                                 <img src={speakers} width={570} height={600} loading="lazy" alt="new arrival" />

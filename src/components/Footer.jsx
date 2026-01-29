@@ -12,7 +12,7 @@ const Footer = () => {
         <footer className="footer">
             <Container>
                 <Row className="footer_main">
-                    <Col lg={3} md={6}>
+                    <Col lg={3} md={6} sm={12}>
                         <div className="footer_box">
                             <a href="#" className="footer_logo">
                                 <img src={Logo} alt="brand icon" />
@@ -31,7 +31,7 @@ const Footer = () => {
                         </div>
                     </Col>
 
-                    <Col lg={3} md={6}>
+                    <Col lg={3} md={6} sm={6} xs={6}>
                         <div className="footer_box">
                             <h4>Shop</h4>
                             <ul>
@@ -43,7 +43,7 @@ const Footer = () => {
                         </div>
                     </Col>
 
-                    <Col lg={3} md={6}>
+                    <Col lg={3} md={6} sm={6} xs={6}>
                         <div className="footer_box">
                             <h4>Company</h4>
                             <ul>
@@ -55,12 +55,12 @@ const Footer = () => {
                         </div>
                     </Col>
 
-                    <Col lg={3} md={6}>
+                    <Col lg={3} md={6} sm={12}>
                         <div className="footer_box">
                             <h4>Support</h4>
                             <ul>
                                 <li>
-                                    <a href="#">111 Bijoy sarani, Dhaka,  DH 1515, Bangladesh.</a>
+                                    <a href="#">122 Bijoy sarani, Dhaka,  DH 1222, Pakistan.</a>
                                 </li>
                                 <li>
                                     <a href="#">fleximart@gmail.com</a>
