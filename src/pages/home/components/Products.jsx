@@ -20,8 +20,11 @@ import keyboard from "../../../assets/images/index/keyboard.webp";
 import led from "../../../assets/images/index/led.webp";
 import mouse from "../../../assets/images/index/mouse.webp";
 import headset from "../../../assets/images/index/headset.webp";
+import { useCart } from "../../../context/CartContext";
+
 
 const Products = () => {
+    const { addToCart, addToWishlist } = useCart();
     const flashSaleEnd = "2026-02-01T23:59:59";
     const products = [
         {
@@ -166,10 +169,10 @@ const Products = () => {
                                 <span className="tag">- {product.discount}%</span>
 
                                 <div className="action-icons">
-                                    <button className="icon-btn">
+                                    <button className="icon-btn" onClick={() => addToCart(product)}>
                                         <FaShoppingCart />
                                     </button>
-                                    <button className="icon-btn">
+                                    <button className="icon-btn" onClick={() => addToWishlist(product)}>
                                         <FaHeart />
                                     </button>
                                     <button className="icon-btn">

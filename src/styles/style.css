@@ -247,6 +247,19 @@ button {
 
 /* Global and reset css end*/
 /* ========== Header styles ========== */
+.FaShoppingCart,
+.FaHeart {
+    position: relative;
+}
+
+.FaShoppingCart span,
+.FaHeart span {
+    position: absolute;
+    top: -8px;
+    font-size: 12px;
+    color: #db4444;
+    font-weight: 700;
+}
 
 header .elements {
     padding: 20px 0px;

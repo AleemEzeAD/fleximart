@@ -7,25 +7,27 @@ import Footer from "./components/Footer";
 import BackToTop from "./components/Back-To-Top";
 import Signup from "./pages/signup/Signup";
 import Signin from "./pages/signup/Signin";
+import { CartProvider } from "./context/CartContext";
+import Cart from "./pages/Cart";
+
 
 
 
 function App() {
     return (
-        <>
+        <CartProvider>
             <Header />
-
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/signin" element={<Signin />} />
+                <Route path="/cart" element={<Cart />} />
                 {/*  <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} /> */}
             </Routes>
-
             <Footer />
             <BackToTop />
-        </>
+        </CartProvider>
     );
 }
 

@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom";
 import { FaHeart, FaShoppingCart, FaSearch, FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
 import Logo from "../assets/images/logo.png";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
+
 
 // Language configuration - Main languages
 const LANGUAGES = [
@@ -28,6 +30,7 @@ const LANGUAGES = [
 const RTL_LANGUAGES = ["ar", "ur", "he", "fa"];
 
 export default function Header() {
+    const { cart, wishlist } = useCart();
     const [selectedLang, setSelectedLang] = useState(() => {
         const saved = localStorage.getItem("selectedLanguage");
         return saved || "English";
@@ -263,12 +266,10 @@ export default function Header() {
                                 <img src={Logo} alt="FlexiMart Logo" width="894" height="243" loading="eager" />
                             </Link>
                         </figure>
-
                         {/* Hamburger Menu Icon */}
                         <button className="hamburger-menu" onClick={() => setSidebarOpen(true)}>
                             <FaBars />
                         </button>
-
                         {/* Desktop Navigation */}
                         <ul className="navlinks desktop-nav">
                             <li className="nav-item">
@@ -284,15 +285,20 @@ export default function Header() {
                                 <NavLink to="/signup" className={({ isActive }) => (isActive ? "nav-link active" : "nav-link")}>Sign Up</NavLink>
                             </li>
                         </ul>
-
                         <div className="navicons desktop-nav">
                             <form>
                                 <input type="text" className="looking-fore" placeholder="What are you looking for?" />
-                                <button className="search" type="button"><FaSearch /></button>
+                                <button className="search" type="button"><FaSearch />
+                                </button>
                             </form>
-
-                            <NavLink to="/wishlist" className="FaHeart"><FaHeart /></NavLink>
-                            <NavLink to="/cart" className="FaShoppingCart"><FaShoppingCart /></NavLink>
+                            <NavLink to="/wishlist" className="FaHeart"><FaHeart />
+                                <span>{wishlist.length}</span>
+                            </NavLink>
+                            <NavLink to="/cart" className="FaShoppingCart"><FaShoppingCart />
+                                <span>
+                                    {cart.reduce((total, item) => total + item.qty, 0)}
+                                </span>
+                            </NavLink>
                         </div>
                     </Nav>
                 </div>

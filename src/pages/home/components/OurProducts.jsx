@@ -1,6 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useCart } from "../../../context/CartContext";
 
 import {
     FaShoppingCart,
@@ -19,6 +20,7 @@ import gamepad from "../../../assets/images/index/gaming_remote.webp";
 import tablets from "../../../assets/images/index/tablets.webp";
 
 const OurProducts = () => {
+    const { addToCart, addToWishlist } = useCart();
     const [activeColor, setActiveColor] = useState({});
 
     const products = [
@@ -196,10 +198,10 @@ const OurProducts = () => {
                                 <span className="tag"> {product.discount}</span>
 
                                 <div className="action-icons">
-                                    <button className="icon-btn">
+                                    <button className="icon-btn" onClick={() => addToCart(product)}>
                                         <FaShoppingCart />
                                     </button>
-                                    <button className="icon-btn">
+                                    <button className="icon-btn" onClick={() => addToWishlist(product)}>
                                         <FaHeart />
                                     </button>
                                     <button className="icon-btn">

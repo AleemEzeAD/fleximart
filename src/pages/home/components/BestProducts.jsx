@@ -1,6 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaShoppingCart, FaHeart, FaEye, FaStar } from "react-icons/fa";
+import { useCart } from "../../../context/CartContext";
 
 import shirts from "../../../assets/images/index/shirts.jpg";
 import hand_bags from "../../../assets/images/index/hand_bags.jpg";
@@ -12,6 +13,7 @@ import furniture from "../../../assets/images/index/furniture.jpg";
 import electronics from "../../../assets/images/index/electronics.jpg";
 
 const BestProd = () => {
+    const { addToCart, addToWishlist } = useCart();
     const products = [
         { id: 1, title: "Casual Cotton Shirt", image: shirts, price: 35, oldPrice: 50, discount: 30, rating: 4, reviews: 45, slug: "cotton-shirt" },
         { id: 2, title: "Designer Hand Bag", image: hand_bags, price: 80, oldPrice: 120, discount: 33, rating: 5, reviews: 60, slug: "hand-bag" },
@@ -57,8 +59,8 @@ const BestProd = () => {
                                 <span className="tag">- {product.discount}%</span>
 
                                 <div className="action-icons mt-auto d-flex gap-2">
-                                    <button className="icon-btn"><FaShoppingCart /></button>
-                                    <button className="icon-btn"><FaHeart /></button>
+                                    <button className="icon-btn" onClick={() => addToCart(product)}><FaShoppingCart /></button>
+                                    <button className="icon-btn" onClick={() => addToWishlist(product)}><FaHeart /></button>
                                     <button className="icon-btn"><FaEye /></button>
                                 </div>
                             </div>
