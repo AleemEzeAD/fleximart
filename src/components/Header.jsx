@@ -191,6 +191,7 @@ export default function Header() {
         }
     };
 
+    // Apply saved language on page load
     useEffect(() => {
         if (selectedLang && selectedLang !== "English") {
             const langObj = LANGUAGES.find((l) => l.name === selectedLang);
@@ -200,25 +201,21 @@ export default function Header() {
         }
     }, []);
 
-    const handleLangChange = async (langName) => {
+    // Handle language change
+    const handleLangChange = (langName) => {
         setSelectedLang(langName);
         localStorage.setItem("selectedLanguage", langName);
         setOpenLang(false);
-
-        window.dispatchEvent(new Event("show-preloader"));
 
         if (langName === "English") {
             window.location.reload();
         } else {
             const langObj = LANGUAGES.find((l) => l.name === langName);
             if (langObj) {
-                await translatePage(langObj.code);
-
-                window.dispatchEvent(new Event("content-loaded"));
+                translatePage(langObj.code);
             }
         }
     };
-
 
     const closeSidebar = () => {
         setSidebarOpen(false);

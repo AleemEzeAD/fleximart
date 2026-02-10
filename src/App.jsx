@@ -1,6 +1,7 @@
 // App.jsx
 import { Routes, Route } from "react-router-dom";
 
+import Preloader from "./components/Preloader";
 import Header from "./components/Header";
 import Home from "./pages/home/Home";
 import Footer from "./components/Footer";
@@ -9,7 +10,6 @@ import Signup from "./pages/signup/Signup";
 import Signin from "./pages/signup/Signin";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./pages/Cart";
-import Preloader from "./components/Preloader";
 
 
 
