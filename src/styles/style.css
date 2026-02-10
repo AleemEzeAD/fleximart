@@ -245,7 +245,67 @@ button {
     background: #DB4444;
 }
 
-/* Global and reset css end*/
+.preloader {
+    position: fixed;
+    inset: 0;
+    background: #DB4444;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+.preloader .favicon-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.preloader .favicon-wrapper img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    animation: jump 1.6s ease-in-out infinite;
+}
+
+.preloader p {
+    margin-top: 16px;
+    color: #e5e7eb;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+}
+
+@keyframes jump {
+    0% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) translateY(-10px);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) translateY(-4px);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+}
+
+
+/* ==========  Global and reset css end ========== */
 /* ========== Header styles ========== */
 .FaShoppingCart,
 .FaHeart {

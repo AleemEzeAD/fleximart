@@ -9,6 +9,8 @@ import Signup from "./pages/signup/Signup";
 import Signin from "./pages/signup/Signin";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./pages/Cart";
+import Preloader from "./components/Preloader";
+
 
 
 
@@ -16,14 +18,13 @@ import Cart from "./pages/Cart";
 function App() {
     return (
         <CartProvider>
+            <Preloader />
             <Header />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/signup" element={<Signup />} />
                 <Route path="/signin" element={<Signin />} />
                 <Route path="/cart" element={<Cart />} />
-                {/*  <Route path="/about" element={<About />} />
-                <Route path="/contact" element={<Contact />} /> */}
             </Routes>
             <Footer />
             <BackToTop />
