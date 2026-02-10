@@ -5,20 +5,26 @@ const Preloader = () => {
     const [visible, setVisible] = useState(true);
 
     useEffect(() => {
-        const handleLoad = () => {
-            setTimeout(() => setVisible(false), 1200);
+        const hidePreloader = () => {
+            setVisible(false);
         };
 
         if (document.readyState === "complete") {
-            handleLoad();
+            hidePreloader();
         } else {
-            window.addEventListener("load", handleLoad);
+            window.addEventListener("load", hidePreloader);
         }
 
-        return () => window.removeEventListener("load", handleLoad);
+        window.addEventListener("content-loaded", hidePreloader);
+
+        return () => {
+            window.removeEventListener("load", hidePreloader);
+            window.removeEventListener("content-loaded", hidePreloader);
+        };
     }, []);
 
     if (!visible) return null;
+
 
     return (
         <div className="preloader">
@@ -31,4 +37,7 @@ const Preloader = () => {
 };
 
 export default Preloader;
+
+
+
 
